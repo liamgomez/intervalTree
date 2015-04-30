@@ -7,6 +7,7 @@
    #include <string>
    using namespace std;
 
+// set colors black and red to integer values
 const int BLACK = 0;
 const int RED = 1;
 
@@ -16,9 +17,14 @@ int findMax(int a, int b);
 class interval
   {
    public:
+      // constructor
       interval();
+
+      // print functions
       void printInterval();
       void printOverlap();
+
+      // assignment operator
       interval& operator =(const interval& copy);
 
    // Maybe make private or protected? doesnt really matter though
@@ -26,21 +32,21 @@ class interval
    
   };
 
+/** @note uses a template becuase i initially started with my BST imp */
 template <class T>
 class iNode
   {
-
-
    public:
+      // constructors
       iNode();
       iNode( interval copy );
-      int getLeftColor();
-      int getRightColor();
 
-      void setLeftColor(int nodeColor);
-      void setRightColor(int nodeColor);
+      // TODO: Make private?
 
-
+      /**
+       * @note I left these as public data members because of all the pointer 
+       *       logic and operations that where needed.
+       */
       int color;
       int max;
       interval i;
@@ -50,6 +56,7 @@ class iNode
 
   };
 
+/** @note uses a template becuase i initially started with my BST imp */
 template <class T>
 class intervalTree
   {
@@ -59,9 +66,14 @@ class intervalTree
       void destroyTree(iNode<T> *sub);
 
       void insert(const interval input);
-      iNode<T>* search(const interval search);
-      
-      // delete, overlap
+
+      // interval deletion
+      iNode<T>* getLeftMostNode(iNode<T> *sub);
+      iNode<T>* search(iNode<T>* sub, const interval search);
+      iNode<T>* searchHelper(const interval search);
+      void deleteInterval(iNode<T>* target);
+      void fixDelete(iNode<T>* x);
+      void swap(iNode<T> *a, iNode<T>* b);
 
       // insertion helpers and fixers 
       void rotateLeft(iNode<T> *x);
@@ -82,10 +94,14 @@ class intervalTree
 
       // prints both inorder then pre order for now.
       void showTree();
+
    private:
+
+      // private methods
       iNode<T> *root;
       iNode<T> *NIL;
 
   };
+
 #include "intervalTree.cpp"
 #endif
