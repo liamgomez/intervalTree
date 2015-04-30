@@ -137,6 +137,7 @@ intervalTree<T>::intervalTree()
       NIL->right = NIL;
       NIL->parent = NIL;
 
+      // low values needed to avoid any conflicts with interval loading
       NIL->max = -999999;
       NIL->color = BLACK;
       NIL->i.low = -999999;
