@@ -1,0 +1,105 @@
+\hypertarget{classi_node}{\section{i\-Node$<$ T $>$ Class Template Reference}
+\label{classi_node}\index{i\-Node$<$ T $>$@{i\-Node$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$interval\-Tree.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classi_node_acfa80f0589c2c2dcc89a44fb6b41555a}{i\-Node} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for interval node class sets the max value of the node to -\/1. \end{DoxyCompactList}\item 
+\hyperlink{classi_node_acfd53858d6a78fc7a1c09d0e442104c4}{i\-Node} (\hyperlink{classinterval}{interval} copy)
+\begin{DoxyCompactList}\small\item\em copy constructor for interval node class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$ \hyperlink{classi_node_a7345e2239c8d643b56b5aa7193f6c85c}{left}
+\item 
+\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$ \hyperlink{classi_node_a5a10f40c1df5dd9d5391b7ca02919597}{right}
+\item 
+\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$ \hyperlink{classi_node_a135b6475b43e4d1389cc620f57b2a6c8}{parent}
+\item 
+int \hyperlink{classi_node_aa7ba0802d39c1bce4004f44f906f84a2}{color}
+\item 
+int \hyperlink{classi_node_adcb3b4ff4d6a266af36e930f494e10db}{max}
+\item 
+\hyperlink{classinterval}{interval} \hyperlink{classi_node_ad904f3d2430c5c0bce7f9bf840a4bad9}{i}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class i\-Node$<$ T $>$}
+
+\begin{DoxyNote}{Note}
+uses a template becuase i initially started with my B\-S\-T imp 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classi_node_acfa80f0589c2c2dcc89a44fb6b41555a}{\index{i\-Node@{i\-Node}!i\-Node@{i\-Node}}
+\index{i\-Node@{i\-Node}!iNode@{i\-Node}}
+\subsubsection[{i\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf i\-Node}$<$ T $>$\-::{\bf i\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classi_node_acfa80f0589c2c2dcc89a44fb6b41555a}
+
+
+Default constructor for interval node class sets the max value of the node to -\/1. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classi_node_acfd53858d6a78fc7a1c09d0e442104c4}{\index{i\-Node@{i\-Node}!i\-Node@{i\-Node}}
+\index{i\-Node@{i\-Node}!iNode@{i\-Node}}
+\subsubsection[{i\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf i\-Node}$<$ T $>$\-::{\bf i\-Node} (
+\begin{DoxyParamCaption}
+\item[{{\bf interval}}]{copy}
+\end{DoxyParamCaption}
+)}}\label{classi_node_acfd53858d6a78fc7a1c09d0e442104c4}
+
+
+copy constructor for interval node class 
+
+accepts one interval and copies it to the nodes interval, used throughout program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The interval to copy has low and high values/ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classi_node_aa7ba0802d39c1bce4004f44f906f84a2}{\index{i\-Node@{i\-Node}!color@{color}}
+\index{color@{color}!iNode@{i\-Node}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf i\-Node}$<$ T $>$\-::color}}\label{classi_node_aa7ba0802d39c1bce4004f44f906f84a2}
+\hypertarget{classi_node_ad904f3d2430c5c0bce7f9bf840a4bad9}{\index{i\-Node@{i\-Node}!i@{i}}
+\index{i@{i}!iNode@{i\-Node}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf interval} {\bf i\-Node}$<$ T $>$\-::i}}\label{classi_node_ad904f3d2430c5c0bce7f9bf840a4bad9}
+\hypertarget{classi_node_a7345e2239c8d643b56b5aa7193f6c85c}{\index{i\-Node@{i\-Node}!left@{left}}
+\index{left@{left}!iNode@{i\-Node}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf i\-Node}$<$T$>$$\ast$ {\bf i\-Node}$<$ T $>$\-::left}}\label{classi_node_a7345e2239c8d643b56b5aa7193f6c85c}
+\begin{DoxyNote}{Note}
+I left these as public data members because of all the pointer logic/operations that where needed. 
+\end{DoxyNote}
+\hypertarget{classi_node_adcb3b4ff4d6a266af36e930f494e10db}{\index{i\-Node@{i\-Node}!max@{max}}
+\index{max@{max}!iNode@{i\-Node}}
+\subsubsection[{max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf i\-Node}$<$ T $>$\-::max}}\label{classi_node_adcb3b4ff4d6a266af36e930f494e10db}
+\hypertarget{classi_node_a135b6475b43e4d1389cc620f57b2a6c8}{\index{i\-Node@{i\-Node}!parent@{parent}}
+\index{parent@{parent}!iNode@{i\-Node}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf i\-Node}$<$T$>$$\ast$ {\bf i\-Node}$<$ T $>$\-::parent}}\label{classi_node_a135b6475b43e4d1389cc620f57b2a6c8}
+\hypertarget{classi_node_a5a10f40c1df5dd9d5391b7ca02919597}{\index{i\-Node@{i\-Node}!right@{right}}
+\index{right@{right}!iNode@{i\-Node}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf i\-Node}$<$T$>$$\ast$ {\bf i\-Node}$<$ T $>$\-::right}}\label{classi_node_a5a10f40c1df5dd9d5391b7ca02919597}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interval_tree_8h}{interval\-Tree.\-h}\item 
+\hyperlink{interval_tree_8cpp}{interval\-Tree.\-cpp}\end{DoxyCompactItemize}

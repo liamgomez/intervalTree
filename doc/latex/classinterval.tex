@@ -1,0 +1,100 @@
+\hypertarget{classinterval}{\section{interval Class Reference}
+\label{classinterval}\index{interval@{interval}}
+}
+
+
+{\ttfamily \#include $<$interval\-Tree.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinterval_acbedd1641f77c0c8007c75ff3f10bb11}{interval} ()
+\begin{DoxyCompactList}\small\item\em default constructor for interval class \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_aee1bf3284b08b4a970eab2542f6c70b5}{print\-Interval} ()
+\begin{DoxyCompactList}\small\item\em simple print function to assist in the printing of intervals \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_a9e6d9ce819b244e13cd0a67ee07a7662}{print\-Overlap} ()
+\begin{DoxyCompactList}\small\item\em A simple print function to assist with printing the overlap message and corresponding interval. \end{DoxyCompactList}\item 
+\hyperlink{classinterval}{interval} \& \hyperlink{classinterval_a8df4ff2ea0ec21a796adf82131997c9c}{operator=} (const \hyperlink{classinterval}{interval} \&copy)
+\begin{DoxyCompactList}\small\item\em overloaded assignment operator for interval class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classinterval_a45194f7bc3d189bba5868223ece0c303}{low}
+\item 
+int \hyperlink{classinterval_acc96c4f9dc2076c99c69984418144113}{high}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classinterval_acbedd1641f77c0c8007c75ff3f10bb11}{\index{interval@{interval}!interval@{interval}}
+\index{interval@{interval}!interval@{interval}}
+\subsubsection[{interval}]{\setlength{\rightskip}{0pt plus 5cm}interval\-::interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterval_acbedd1641f77c0c8007c75ff3f10bb11}
+
+
+default constructor for interval class 
+
+sets the low and high values to a negative flag value of -\/1 
+
+\subsection{Member Function Documentation}
+\hypertarget{classinterval_a8df4ff2ea0ec21a796adf82131997c9c}{\index{interval@{interval}!operator=@{operator=}}
+\index{operator=@{operator=}!interval@{interval}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interval} \& interval\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf interval} \&}]{copy}
+\end{DoxyParamCaption}
+)}}\label{classinterval_a8df4ff2ea0ec21a796adf82131997c9c}
+
+
+overloaded assignment operator for interval class 
+
+Simply copies the low and high values of the left side to the current interval. Not really used but thought it might come in handy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The interval to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this interval to finalize assignment 
+\end{DoxyReturn}
+\hypertarget{classinterval_aee1bf3284b08b4a970eab2542f6c70b5}{\index{interval@{interval}!print\-Interval@{print\-Interval}}
+\index{print\-Interval@{print\-Interval}!interval@{interval}}
+\subsubsection[{print\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}void interval\-::print\-Interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterval_aee1bf3284b08b4a970eab2542f6c70b5}
+
+
+simple print function to assist in the printing of intervals 
+
+\hypertarget{classinterval_a9e6d9ce819b244e13cd0a67ee07a7662}{\index{interval@{interval}!print\-Overlap@{print\-Overlap}}
+\index{print\-Overlap@{print\-Overlap}!interval@{interval}}
+\subsubsection[{print\-Overlap}]{\setlength{\rightskip}{0pt plus 5cm}void interval\-::print\-Overlap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterval_a9e6d9ce819b244e13cd0a67ee07a7662}
+
+
+A simple print function to assist with printing the overlap message and corresponding interval. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classinterval_acc96c4f9dc2076c99c69984418144113}{\index{interval@{interval}!high@{high}}
+\index{high@{high}!interval@{interval}}
+\subsubsection[{high}]{\setlength{\rightskip}{0pt plus 5cm}int interval\-::high}}\label{classinterval_acc96c4f9dc2076c99c69984418144113}
+\hypertarget{classinterval_a45194f7bc3d189bba5868223ece0c303}{\index{interval@{interval}!low@{low}}
+\index{low@{low}!interval@{interval}}
+\subsubsection[{low}]{\setlength{\rightskip}{0pt plus 5cm}int interval\-::low}}\label{classinterval_a45194f7bc3d189bba5868223ece0c303}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interval_tree_8h}{interval\-Tree.\-h}\item 
+\hyperlink{interval_tree_8cpp}{interval\-Tree.\-cpp}\end{DoxyCompactItemize}

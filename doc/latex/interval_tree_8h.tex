@@ -1,0 +1,77 @@
+\hypertarget{interval_tree_8h}{\section{interval\-Tree.\-h File Reference}
+\label{interval_tree_8h}\index{interval\-Tree.\-h@{interval\-Tree.\-h}}
+}
+
+
+Class Spec for interval tree and all other necassary classes.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}interval\-Tree.\-cpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classinterval}{interval}
+\item 
+class \hyperlink{classi_node}{i\-Node$<$ T $>$}
+\item 
+class \hyperlink{classinterval_tree}{interval\-Tree$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{interval_tree_8h_ae6428523f840a61fba7bf7e2b9427648}{find\-Max} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Finds the max number between two numbers and returns it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{interval_tree_8h_a5b27e565b0566bdf2097265d0987c156}{B\-L\-A\-C\-K} = 0
+\item 
+const int \hyperlink{interval_tree_8h_a1849725ee55eae115e3000bf552dee51}{R\-E\-D} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class Spec for interval tree and all other necassary classes. \begin{DoxyAuthor}{Author}
+Liam Gomez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+4/29/2015 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{interval_tree_8h_ae6428523f840a61fba7bf7e2b9427648}{\index{interval\-Tree.\-h@{interval\-Tree.\-h}!find\-Max@{find\-Max}}
+\index{find\-Max@{find\-Max}!intervalTree.h@{interval\-Tree.\-h}}
+\subsubsection[{find\-Max}]{\setlength{\rightskip}{0pt plus 5cm}int find\-Max (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}}\label{interval_tree_8h_ae6428523f840a61fba7bf7e2b9427648}
+
+
+Finds the max number between two numbers and returns it. 
+
+simple comparison to find the max of two inputs, used throughout the interval tree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first number to compare \\
+\hline
+{\em b} & The second number to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer, the maximum of the two. If equal b will be returned instead. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{interval_tree_8h_a5b27e565b0566bdf2097265d0987c156}{\index{interval\-Tree.\-h@{interval\-Tree.\-h}!B\-L\-A\-C\-K@{B\-L\-A\-C\-K}}
+\index{B\-L\-A\-C\-K@{B\-L\-A\-C\-K}!intervalTree.h@{interval\-Tree.\-h}}
+\subsubsection[{B\-L\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}const int B\-L\-A\-C\-K = 0}}\label{interval_tree_8h_a5b27e565b0566bdf2097265d0987c156}
+\hypertarget{interval_tree_8h_a1849725ee55eae115e3000bf552dee51}{\index{interval\-Tree.\-h@{interval\-Tree.\-h}!R\-E\-D@{R\-E\-D}}
+\index{R\-E\-D@{R\-E\-D}!intervalTree.h@{interval\-Tree.\-h}}
+\subsubsection[{R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const int R\-E\-D = 1}}\label{interval_tree_8h_a1849725ee55eae115e3000bf552dee51}

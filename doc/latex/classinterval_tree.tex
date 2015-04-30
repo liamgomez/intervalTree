@@ -1,0 +1,493 @@
+\hypertarget{classinterval_tree}{\section{interval\-Tree$<$ T $>$ Class Template Reference}
+\label{classinterval_tree}\index{interval\-Tree$<$ T $>$@{interval\-Tree$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$interval\-Tree.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinterval_tree_a7d841c11fd9755560bed6f8159ac1a9e}{interval\-Tree} ()
+\begin{DoxyCompactList}\small\item\em default constructor for interval tree class \end{DoxyCompactList}\item 
+\hyperlink{classinterval_tree_ae3fa76db3a6fda8e7cdc0c9e84e8bfe2}{$\sim$interval\-Tree} ()
+\begin{DoxyCompactList}\small\item\em default destructor for interval tree class \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a651e1272f876a948aea2cca238e24d65}{destroy\-Tree} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$sub)
+\begin{DoxyCompactList}\small\item\em destroys the tree by preforming a post order deletion \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_aabac1abe00232730c0b93d3cffa39b7c}{insert} (const \hyperlink{classinterval}{interval} input)
+\begin{DoxyCompactList}\small\item\em Inserts the input interval into new node and puts it into the tree. \end{DoxyCompactList}\item 
+\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$ \hyperlink{classinterval_tree_aabc282d5871443142bc744cbe1088672}{get\-Left\-Most\-Node} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$sub)
+\begin{DoxyCompactList}\small\item\em Obtains the left most node for a given subtree. \end{DoxyCompactList}\item 
+\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$ \hyperlink{classinterval_tree_ab03b316e6aff3dc635ac7da1f7ebb13f}{search} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$sub, const \hyperlink{classinterval}{interval} search)
+\begin{DoxyCompactList}\small\item\em Searches the tree for a given interval. \end{DoxyCompactList}\item 
+\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$ \hyperlink{classinterval_tree_a27113d930450800c9b1e1a5007acebb4}{search\-Helper} (const \hyperlink{classinterval}{interval} \hyperlink{classinterval_tree_ab03b316e6aff3dc635ac7da1f7ebb13f}{search})
+\begin{DoxyCompactList}\small\item\em The recursive helper for the search function. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_ad2b7653fba7f5df9a242e67e86a2876b}{delete\-Interval} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$target)
+\item 
+void \hyperlink{classinterval_tree_aa81787b5ab64d9d3ba1b2f0cf933f98c}{fix\-Delete} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$x)
+\item 
+void \hyperlink{classinterval_tree_ae78c3fec2beba297ab640f0f428e3400}{swap} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$a, \hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$b)
+\begin{DoxyCompactList}\small\item\em Simple function thats swaps the two nodes a and b. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a7228084b4c5e95fa2b95849f62e4de02}{rotate\-Left} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$x)
+\begin{DoxyCompactList}\small\item\em Rotates the tree left around the specified x node. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a1d7597a79aa2d8e24c57d329ac24775e}{rotate\-Right} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$x)
+\begin{DoxyCompactList}\small\item\em Rotates the tree right around the specified x node. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a6577575e3f89b035e6d01f39b1a8081f}{fix\-Insertion} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$fix)
+\begin{DoxyCompactList}\small\item\em Maintains the Red/\-Black properties of the tree after an insertion. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a755ba72519607da1fa2b64e637f75dfe}{fix\-Max\-Values} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$x)
+\begin{DoxyCompactList}\small\item\em Finds the largest max values in a portion of the tree. \end{DoxyCompactList}\item 
+bool \hyperlink{classinterval_tree_a89f4761ca4516e5bd555c07e2aba86fd}{overlaps} (\hyperlink{classinterval}{interval} a, \hyperlink{classinterval}{interval} b)
+\begin{DoxyCompactList}\small\item\em Determines if two intervals (a) and (b) overlap in some form. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_aa63459da57b9cd7cc74bcec768200ed6}{find\-Overlap} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$sub, const \hyperlink{classinterval}{interval} \&target)
+\begin{DoxyCompactList}\small\item\em Finds all the overlaps in a given subtree (root) \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a78b2a7b7e67b9a46317db8799449ac27}{overlap\-Helper} (const \hyperlink{classinterval}{interval} \&target)
+\begin{DoxyCompactList}\small\item\em Recursive helper for the find\-Overlap function, just uses the root node as the subtree to find all overlap conflicts. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a33734743c5425ab0dfb5146d15116f5f}{preorder} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$sub)
+\begin{DoxyCompactList}\small\item\em Preorder print function for the interval tree. \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_a197ac6515d25299511a18a69f34a4877}{inorder\-Print} (\hyperlink{classi_node}{i\-Node}$<$ T $>$ $\ast$sub)
+\begin{DoxyCompactList}\small\item\em inorder print function for interval tree \end{DoxyCompactList}\item 
+void \hyperlink{classinterval_tree_af298a0e4578f0c99ccf93b3ad675e5a2}{show\-Tree} ()
+\begin{DoxyCompactList}\small\item\em Prints the tree inorder then in preorder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class interval\-Tree$<$ T $>$}
+
+\begin{DoxyNote}{Note}
+uses a template becuase i initially started with my B\-S\-T imp 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classinterval_tree_a7d841c11fd9755560bed6f8159ac1a9e}{\index{interval\-Tree@{interval\-Tree}!interval\-Tree@{interval\-Tree}}
+\index{interval\-Tree@{interval\-Tree}!intervalTree@{interval\-Tree}}
+\subsubsection[{interval\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf interval\-Tree}$<$ T $>$\-::{\bf interval\-Tree} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a7d841c11fd9755560bed6f8159ac1a9e}
+
+
+default constructor for interval tree class 
+
+This constructor allocates two nodes, one for the N\-I\-L pointer and the other for the root pointer. It sets all the interval and max variables to a very low number to avoid any conflicts. Sets root to N\-I\-L to make the tree empty. To maintain R\-B tree properties the N\-I\-L and root nodes both start with the color black.
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_ae3fa76db3a6fda8e7cdc0c9e84e8bfe2}{\index{interval\-Tree@{interval\-Tree}!$\sim$interval\-Tree@{$\sim$interval\-Tree}}
+\index{$\sim$interval\-Tree@{$\sim$interval\-Tree}!intervalTree@{interval\-Tree}}
+\subsubsection[{$\sim$interval\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf interval\-Tree}$<$ T $>$\-::$\sim${\bf interval\-Tree} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_ae3fa76db3a6fda8e7cdc0c9e84e8bfe2}
+
+
+default destructor for interval tree class 
+
+uses the method destroy tree, on the root node to preform a post order deletion of the nodes in the tree.
+
+\begin{DoxyPrecond}{Precondition}
+the program must end 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the tree will be deleted and the memory returned to the operating system.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classinterval_tree_ad2b7653fba7f5df9a242e67e86a2876b}{\index{interval\-Tree@{interval\-Tree}!delete\-Interval@{delete\-Interval}}
+\index{delete\-Interval@{delete\-Interval}!intervalTree@{interval\-Tree}}
+\subsubsection[{delete\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::delete\-Interval (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_ad2b7653fba7f5df9a242e67e86a2876b}
+\hypertarget{classinterval_tree_a651e1272f876a948aea2cca238e24d65}{\index{interval\-Tree@{interval\-Tree}!destroy\-Tree@{destroy\-Tree}}
+\index{destroy\-Tree@{destroy\-Tree}!intervalTree@{interval\-Tree}}
+\subsubsection[{destroy\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::destroy\-Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{sub}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a651e1272f876a948aea2cca238e24d65}
+
+
+destroys the tree by preforming a post order deletion 
+
+This function is used in the default destructor for the interval tree class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub} & The root pointer of the tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_aa63459da57b9cd7cc74bcec768200ed6}{\index{interval\-Tree@{interval\-Tree}!find\-Overlap@{find\-Overlap}}
+\index{find\-Overlap@{find\-Overlap}!intervalTree@{interval\-Tree}}
+\subsubsection[{find\-Overlap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::find\-Overlap (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{sub, }
+\item[{const {\bf interval} \&}]{target}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_aa63459da57b9cd7cc74bcec768200ed6}
+
+
+Finds all the overlaps in a given subtree (root) 
+
+This function recursively goes through the tree finding overlapping intervals, once one is found it is printed using the interval class methods.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub} & The subtree to search for overlaps in (initially should be root) \\
+\hline
+{\em target} & The target interval to search for overlap conflicts with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_aa81787b5ab64d9d3ba1b2f0cf933f98c}{\index{interval\-Tree@{interval\-Tree}!fix\-Delete@{fix\-Delete}}
+\index{fix\-Delete@{fix\-Delete}!intervalTree@{interval\-Tree}}
+\subsubsection[{fix\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::fix\-Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{x}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_aa81787b5ab64d9d3ba1b2f0cf933f98c}
+\hypertarget{classinterval_tree_a6577575e3f89b035e6d01f39b1a8081f}{\index{interval\-Tree@{interval\-Tree}!fix\-Insertion@{fix\-Insertion}}
+\index{fix\-Insertion@{fix\-Insertion}!intervalTree@{interval\-Tree}}
+\subsubsection[{fix\-Insertion}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::fix\-Insertion (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{fix}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a6577575e3f89b035e6d01f39b1a8081f}
+
+
+Maintains the Red/\-Black properties of the tree after an insertion. 
+
+This function uses five different cases to maintain the Red/black tree properties; Property 3 -\/ All leaves must be black, Property 4
+\begin{DoxyItemize}
+\item Both children of a red node are always black, and Property 5 -\/ All paths from a node to its leaf contain the same number of black nodes
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondition}
+Should only be called after the insertion operation is preformed on the tree. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The tree will be fixed, and its R\-B properties maintained. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em fix} & The pointer to the subtree / tree to fix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a755ba72519607da1fa2b64e637f75dfe}{\index{interval\-Tree@{interval\-Tree}!fix\-Max\-Values@{fix\-Max\-Values}}
+\index{fix\-Max\-Values@{fix\-Max\-Values}!intervalTree@{interval\-Tree}}
+\subsubsection[{fix\-Max\-Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::fix\-Max\-Values (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{x}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a755ba72519607da1fa2b64e637f75dfe}
+
+
+Finds the largest max values in a portion of the tree. 
+
+This function finds the highest max value from a given subtree, it is used to maintain the max data values throughout insertion / deletion operations. It works by simply looping through the tree comparing max values at each stop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The interval node to find the max value in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_aabc282d5871443142bc744cbe1088672}{\index{interval\-Tree@{interval\-Tree}!get\-Left\-Most\-Node@{get\-Left\-Most\-Node}}
+\index{get\-Left\-Most\-Node@{get\-Left\-Most\-Node}!intervalTree@{interval\-Tree}}
+\subsubsection[{get\-Left\-Most\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf i\-Node}$<$ T $>$ $\ast$ {\bf interval\-Tree}$<$ T $>$\-::get\-Left\-Most\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{sub}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_aabc282d5871443142bc744cbe1088672}
+
+
+Obtains the left most node for a given subtree. 
+
+Gets the farthest node to the left and returns it, the subtree is usually the root node, but it doesn't matter either way.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub} & The subtree in which to obtain the left most node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interval node that is the farthest left for the given subtree. 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a197ac6515d25299511a18a69f34a4877}{\index{interval\-Tree@{interval\-Tree}!inorder\-Print@{inorder\-Print}}
+\index{inorder\-Print@{inorder\-Print}!intervalTree@{interval\-Tree}}
+\subsubsection[{inorder\-Print}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::inorder\-Print (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{sub}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a197ac6515d25299511a18a69f34a4877}
+
+
+inorder print function for interval tree 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub} & The subtree to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_aabac1abe00232730c0b93d3cffa39b7c}{\index{interval\-Tree@{interval\-Tree}!insert@{insert}}
+\index{insert@{insert}!intervalTree@{interval\-Tree}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf interval}}]{input}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_aabac1abe00232730c0b93d3cffa39b7c}
+
+
+Inserts the input interval into new node and puts it into the tree. 
+
+This insertion function first finds the appropriate place for the new node, using the interval low value (i.\-low) as the key. It then checks the various cases, and prepares the node for insertion fix.
+
+\begin{DoxyPrecond}{Precondition}
+The interval should not already exist in the tree, and should probably not be negative although i haven't tested it.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The new interval will be placed into the tree with no children, and be the color R\-E\-D to prepare it for insertion fix.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The interval to be inputed into the interval tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a78b2a7b7e67b9a46317db8799449ac27}{\index{interval\-Tree@{interval\-Tree}!overlap\-Helper@{overlap\-Helper}}
+\index{overlap\-Helper@{overlap\-Helper}!intervalTree@{interval\-Tree}}
+\subsubsection[{overlap\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::overlap\-Helper (
+\begin{DoxyParamCaption}
+\item[{const {\bf interval} \&}]{target}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a78b2a7b7e67b9a46317db8799449ac27}
+
+
+Recursive helper for the find\-Overlap function, just uses the root node as the subtree to find all overlap conflicts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The interval to search for overlaps in the tree with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a89f4761ca4516e5bd555c07e2aba86fd}{\index{interval\-Tree@{interval\-Tree}!overlaps@{overlaps}}
+\index{overlaps@{overlaps}!intervalTree@{interval\-Tree}}
+\subsubsection[{overlaps}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf interval\-Tree}$<$ T $>$\-::overlaps (
+\begin{DoxyParamCaption}
+\item[{{\bf interval}}]{a, }
+\item[{{\bf interval}}]{b}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a89f4761ca4516e5bd555c07e2aba86fd}
+
+
+Determines if two intervals (a) and (b) overlap in some form. 
+
+Does a simple comparison to determine if two intervals overlap used to find overlapping intervals in the overlap\-Helper
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First interval for overlap testing \\
+\hline
+{\em b} & Second interval for overlap testing\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean result of the test, states if they are overlapping or not. 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a33734743c5425ab0dfb5146d15116f5f}{\index{interval\-Tree@{interval\-Tree}!preorder@{preorder}}
+\index{preorder@{preorder}!intervalTree@{interval\-Tree}}
+\subsubsection[{preorder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::preorder (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{sub}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a33734743c5425ab0dfb5146d15116f5f}
+
+
+Preorder print function for the interval tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub} & The subtree to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a7228084b4c5e95fa2b95849f62e4de02}{\index{interval\-Tree@{interval\-Tree}!rotate\-Left@{rotate\-Left}}
+\index{rotate\-Left@{rotate\-Left}!intervalTree@{interval\-Tree}}
+\subsubsection[{rotate\-Left}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::rotate\-Left (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{x}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a7228084b4c5e95fa2b95849f62e4de02}
+
+
+Rotates the tree left around the specified x node. 
+
+This function will rotate the tree around the interval node x, does not change the order of the elements.
+
+\begin{DoxyPrecond}{Precondition}
+should only be used by fix functions 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The pivot node for which to rotate on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a1d7597a79aa2d8e24c57d329ac24775e}{\index{interval\-Tree@{interval\-Tree}!rotate\-Right@{rotate\-Right}}
+\index{rotate\-Right@{rotate\-Right}!intervalTree@{interval\-Tree}}
+\subsubsection[{rotate\-Right}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::rotate\-Right (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{x}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a1d7597a79aa2d8e24c57d329ac24775e}
+
+
+Rotates the tree right around the specified x node. 
+
+This function will rotate the tree around the interval node x, does not change the order of the elements.
+
+\begin{DoxyPrecond}{Precondition}
+should only be used by fix functions 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The pivot node for which to rotate on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_ab03b316e6aff3dc635ac7da1f7ebb13f}{\index{interval\-Tree@{interval\-Tree}!search@{search}}
+\index{search@{search}!intervalTree@{interval\-Tree}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf i\-Node}$<$ T $>$ $\ast$ {\bf interval\-Tree}$<$ T $>$\-::search (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{sub, }
+\item[{const {\bf interval}}]{find}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_ab03b316e6aff3dc635ac7da1f7ebb13f}
+
+
+Searches the tree for a given interval. 
+
+This function recursively searches the tree, going either left or right based on the key value.
+
+\begin{DoxyPrecond}{Precondition}
+the subtree to search for the interval should be the root initially, Should only be called using the search\-Helper function or bad things will happen.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The given interval will either be found, or a null pointer will be returned.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em sub} & The subtree to find the interval in (Should be root!) \\
+\hline
+{\em find} & The interval to find in the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interval node that contains the target interval 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_a27113d930450800c9b1e1a5007acebb4}{\index{interval\-Tree@{interval\-Tree}!search\-Helper@{search\-Helper}}
+\index{search\-Helper@{search\-Helper}!intervalTree@{interval\-Tree}}
+\subsubsection[{search\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf i\-Node}$<$ T $>$ $\ast$ {\bf interval\-Tree}$<$ T $>$\-::search\-Helper (
+\begin{DoxyParamCaption}
+\item[{const {\bf interval}}]{find}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_a27113d930450800c9b1e1a5007acebb4}
+
+
+The recursive helper for the search function. 
+
+Simply calls the search function on the root node and returns the found node to caller.
+
+\begin{DoxyPrecond}{Precondition}
+the interval should exist in the tree, if not the caller should force conditions for no run on nullptr return
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em find} & The interval to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interval node that contains the specified interval, nullptr if the interval could not be found. 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_af298a0e4578f0c99ccf93b3ad675e5a2}{\index{interval\-Tree@{interval\-Tree}!show\-Tree@{show\-Tree}}
+\index{show\-Tree@{show\-Tree}!intervalTree@{interval\-Tree}}
+\subsubsection[{show\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::show\-Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_af298a0e4578f0c99ccf93b3ad675e5a2}
+
+
+Prints the tree inorder then in preorder. 
+
+calls both functions on the root node to display entire tree, also prints the current interval at the root node and color of each node.
+
+\begin{DoxyPrecond}{Precondition}
+the tree should not be empty 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the interval tree contents will be displayed to the user in both orders.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{classinterval_tree_ae78c3fec2beba297ab640f0f428e3400}{\index{interval\-Tree@{interval\-Tree}!swap@{swap}}
+\index{swap@{swap}!intervalTree@{interval\-Tree}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf interval\-Tree}$<$ T $>$\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{a, }
+\item[{{\bf i\-Node}$<$ T $>$ $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{classinterval_tree_ae78c3fec2beba297ab640f0f428e3400}
+
+
+Simple function thats swaps the two nodes a and b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First interval node to swap \\
+\hline
+{\em b} & Second interval node to swap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interval_tree_8h}{interval\-Tree.\-h}\item 
+\hyperlink{interval_tree_8cpp}{interval\-Tree.\-cpp}\end{DoxyCompactItemize}
