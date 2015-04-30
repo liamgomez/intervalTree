@@ -1,0 +1,277 @@
+Script started on Wed 29 Apr 2015 10:06:22 PM PDT
+]0;liamg@ubuntu: ~/Desktop/CS 302/7/intervalTree/doc/latexliamg@ubuntu:~/Desktop/CS 302/7/intervalTree/doc/latex$ ./n[Kmain
+bash: ./main: No such file or directory
+]0;liamg@ubuntu: ~/Desktop/CS 302/7/intervalTree/doc/latexliamg@ubuntu:~/Desktop/CS 302/7/intervalTree/doc/latex$ cd ..
+]0;liamg@ubuntu: ~/Desktop/CS 302/7/intervalTree/docliamg@ubuntu:~/Desktop/CS 302/7/intervalTree/doc$ cd..[K[K ..
+]0;liamg@ubuntu: ~/Desktop/CS 302/7/intervalTreeliamg@ubuntu:~/Desktop/CS 302/7/intervalTree$ ls -a
+[0m[01;34m.[0m  [34;42m..[0m  [01;34mdoc[0m  [01;34m.git[0m  intervalFile.txt  intervalTree.cpp  intervalTree.h  [01;32mmain[0m  main.cpp  README.md
+]0;liamg@ubuntu: ~/Desktop/CS 302/7/intervalTreeliamg@ubuntu:~/Desktop/CS 302/7/intervalTree$ ..[K/main 
+
+
+CURRENT ROOT DATA: [16, 21]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[16, 21] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[0, 3] max = 3  Color : RED
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : RED
+[17, 19] max = 20  Color : BLACK
+[19, 20] max = 20  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[0, 3] max = 3  Color : RED
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[16, 21] max = 30  Color : BLACK
+[17, 19] max = 20  Color : BLACK
+[19, 20] max = 20  Color : RED
+[25, 30] max = 30  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+Please enter the low value of an interval to find overlaps : 0
+
+Enter high value of interval to find overlaps : 15
+Overlap Found for time interval :  [0, 3] 
+
+Overlap Found for time interval :  [5, 8] 
+
+Overlap Found for time interval :  [8, 9] 
+
+Overlap Found for time interval :  [15, 23] 
+
+
+Enter low value of interval you wish to remove : 0
+
+Enter high value of interval you wish to remove : 3
+
+
+CURRENT ROOT DATA: [16, 21]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[16, 21] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : RED
+[17, 19] max = 20  Color : BLACK
+[19, 20] max = 20  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[16, 21] max = 30  Color : BLACK
+[17, 19] max = 20  Color : BLACK
+[19, 20] max = 20  Color : RED
+[25, 30] max = 30  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+Continue demo??? (y/n) : y
+
+
+CURRENT ROOT DATA: [16, 21]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[16, 21] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : RED
+[17, 19] max = 20  Color : BLACK
+[19, 20] max = 20  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[16, 21] max = 30  Color : BLACK
+[17, 19] max = 20  Color : BLACK
+[19, 20] max = 20  Color : RED
+[25, 30] max = 30  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+Please enter the low value of an interval to find overlaps : 5 30
+
+Enter high value of interval to find overlaps : Overlap Found for time interval :  [5, 8] 
+
+Overlap Found for time interval :  [8, 9] 
+
+Overlap Found for time interval :  [15, 23] 
+
+Overlap Found for time interval :  [16, 21] 
+
+Overlap Found for time interval :  [17, 19] 
+
+Overlap Found for time interval :  [19, 20] 
+
+Overlap Found for time interval :  [25, 30] 
+
+Overlap Found for time interval :  [26, 26] 
+
+
+Enter low value of interval you wish to remove : 16
+
+Enter high value of interval you wish to remove : 21
+
+
+CURRENT ROOT DATA: [17, 19]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[17, 19] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : RED
+[19, 20] max = 20  Color : BLACK
+[26, 26] max = 26  Color : BLACK
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[17, 19] max = 30  Color : BLACK
+[19, 20] max = 20  Color : BLACK
+[25, 30] max = 30  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+Continue demo??? (y/n) : y
+
+
+CURRENT ROOT DATA: [17, 19]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[17, 19] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : RED
+[19, 20] max = 20  Color : BLACK
+[26, 26] max = 26  Color : BLACK
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[17, 19] max = 30  Color : BLACK
+[19, 20] max = 20  Color : BLACK
+[25, 30] max = 30  Color : RED
+[26, 26] max = 26  Color : BLACK
+
+
+Please enter the low value of an interval to find overlaps : 5
+
+Enter high value of interval to find overlaps : 8
+Overlap Found for time interval :  [5, 8] 
+
+Overlap Found for time interval :  [8, 9] 
+
+
+Enter low value of interval you wish to remove : 19
+
+Enter high value of interval you wish to remove : 29 09 
+
+
+CURRENT ROOT DATA: [17, 19]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[17, 19] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : BLACK
+[26, 26] max = 26  Color : RED
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[17, 19] max = 30  Color : BLACK
+[25, 30] max = 30  Color : BLACK
+[26, 26] max = 26  Color : RED
+
+
+Continue demo??? (y/n) : y
+
+
+CURRENT ROOT DATA: [17, 19]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[17, 19] max = 30  Color : BLACK
+[8, 9] max = 23  Color : RED
+[5, 8] max = 8  Color : BLACK
+[15, 23] max = 23  Color : BLACK
+[25, 30] max = 30  Color : BLACK
+[26, 26] max = 26  Color : RED
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[5, 8] max = 8  Color : BLACK
+[8, 9] max = 23  Color : RED
+[15, 23] max = 23  Color : BLACK
+[17, 19] max = 30  Color : BLACK
+[25, 30] max = 30  Color : BLACK
+[26, 26] max = 26  Color : RED
+
+
+Please enter the low value of an interval to find overlaps : 5
+
+Enter high value of interval to find overlaps : 23
+Overlap Found for time interval :  [5, 8] 
+
+Overlap Found for time interval :  [8, 9] 
+
+Overlap Found for time interval :  [15, 23] 
+
+Overlap Found for time interval :  [17, 19] 
+
+
+Enter low value of interval you wish to remove : 5
+
+Enter high value of interval you wish to remove : 8
+
+
+CURRENT ROOT DATA: [17, 19]  MAX : 30   Color : BLACK
+
+
+INORDER PRINT FOR INTERVAL TREE : 
+[17, 19] max = 30  Color : BLACK
+[8, 9] max = 23  Color : BLACK
+[15, 23] max = 23  Color : RED
+[25, 30] max = 30  Color : BLACK
+[26, 26] max = 26  Color : RED
+
+
+PREORDER PRINT FOR INTERVAL TREE : 
+[8, 9] max = 23  Color : BLACK
+[15, 23] max = 23  Color : RED
+[17, 19] max = 30  Color : BLACK
+[25, 30] max = 30  Color : BLACK
+[26, 26] max = 26  Color : RED
+
+
+Continue demo??? (y/n) : n
+]0;liamg@ubuntu: ~/Desktop/CS 302/7/intervalTreeliamg@ubuntu:~/Desktop/CS 302/7/intervalTree$ eix[K[Kxit
+Script done on Wed 29 Apr 2015 10:08:25 PM PDT
