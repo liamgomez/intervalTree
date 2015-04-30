@@ -1,19 +1,27 @@
-// Header Files
+/**
+ * @file intervalTree.h
+ * @author Liam Gomez
+ * @brief Class Spec for interval tree and all other necassary classes
+ * @date 4/29/2015
+ */
+
+// HEADER FILES ////////////////////////////////////////////////////////////////
 #ifndef INTERVAL_TREE
 #define INTERVAL_TREE
    
-   // debug
-   #include <iostream>
-   #include <string>
-   using namespace std;
+#include <iostream>
+#include <string>
 
-// set colors black and red to integer values
+using namespace std;
+
+// GLOBAL CONSTANTS ////////////////////////////////////////////////////////////
 const int BLACK = 0;
 const int RED = 1;
 
 // simple max help function
 int findMax(int a, int b);
 
+// INTERVAL CLASS //////////////////////////////////////////////////////////////
 class interval
   {
    public:
@@ -32,6 +40,8 @@ class interval
    
   };
 
+// INTERVAL NODE CLASS /////////////////////////////////////////////////////////
+
 /** @note uses a template becuase i initially started with my BST imp */
 template <class T>
 class iNode
@@ -45,16 +55,22 @@ class iNode
 
       /**
        * @note I left these as public data members because of all the pointer 
-       *       logic and operations that where needed.
+       *       logic/operations that where needed.
        */
-      int color;
-      int max;
-      interval i;
+
+      // NODE POINTERS
       iNode<T> *left;
       iNode<T> *right;
       iNode<T> *parent;
+      
+      // OTHER DATA MEMBERS
+      int color;
+      int max;
+      interval i;
 
   };
+
+// INTERVAL TREE CLASS /////////////////////////////////////////////////////////
 
 /** @note uses a template becuase i initially started with my BST imp */
 template <class T>

@@ -1,3 +1,24 @@
+/**
+ * @file intervalTree.cpp
+ * @author Liam Gomez
+ * @brief Implementation file for interval tree and all other necassary classes
+ * 
+ * @mainpage 
+ * This program contains a total of three classes
+ *    -- An interval class with low and high data members
+ *    -- An interval Node class with left, right, and parent node pointers.
+ *       Aswell as max and color data members.
+ *    -- Interval Tree class for the tree implementation, containing a root
+ *       and NIL node pointers.
+ *       
+ * Everything is tested and appears to be working properly, main program runs
+ * through the various operations that can be preformed on the tree.
+ * 
+ * Comments / Questions : liamgomez@nevada.unr.edu
+ * 
+ * @date 4/29/2015
+ */
+
 // Header Files ////////////////////////////////////////////////////////////////
 #include "intervalTree.h"
 #include <iostream>
@@ -5,20 +26,6 @@
 #include <string>
 
 using namespace std;
-
-
-// Global Constants ////////////////////////////////////////////////////////////
-
-
-
-// Function Spec ///////////////////////////////////////////////////////////////
-
-   // todo list
-      // make delete and delete fixxer functions
-      // get user input
-      // comment code
-      // get the node depth stats for preorder printng.
-      // make some data members of classes private mainly node.
 
 // Main Program ////////////////////////////////////////////////////////////////
 int main()
@@ -33,10 +40,11 @@ int main()
       bool done = false;
       char response;
 
-      fin.open("intervalFile.txt");
-
-
+   // load the intervals from file
+   fin.open("intervalFile.txt");
    fin >> fLow >> fHigh;
+
+   // loop till end of file
    for (int i = 1; fin.good(); ++i)
      {
       i1.low = fLow;
@@ -45,8 +53,10 @@ int main()
       fin >> fLow >> fHigh;
      }
 
+   // testing loop
    do
      {
+      // print the tree
       testing.showTree();
 
       cout << "Please enter the low value of an interval to find overlaps : ";
@@ -55,6 +65,7 @@ int main()
       cout << endl << "Enter high value of interval to find overlaps : ";
       cin >> i1.high;
 
+      // test for overlap
       testing.overlapHelper(i1);
 
       cout << endl << "Enter low value of interval you wish to remove : ";
@@ -66,13 +77,13 @@ int main()
       iNode<interval> *search = testing.searchHelper(i1);
 
       // check if the innterval was found
-
       if (search != nullptr)
         {
          testing.deleteInterval(search);
          testing.showTree();
         }
 
+      // not found, interval does not exist
       else
         {
          cout << endl << "The interval could not be found, select an interval";

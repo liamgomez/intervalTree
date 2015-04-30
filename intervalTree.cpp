@@ -1,4 +1,14 @@
+/**
+ * @file intervalTree.cpp
+ * @author Liam Gomez
+ * @brief Implementation file for interval tree and all other necassary classes
+ * @note All extra credit is implemented, tested and working properly.
+ * @date 4/29/2015
+ */
+
+// Header Files ////////////////////////////////////////////////////////////////
 #include "intervalTree.h"
+
 
 /**
  * @brief Finds the max number between two numbers and returns it
@@ -9,7 +19,7 @@
  * @param b The second number to compare
  * 
  * @return An integer, the maximum of the two. If equal b will be returned
- *         intead.
+ *         instead.
  */
 int findMax(int a, int b)
   {
@@ -20,11 +30,14 @@ int findMax(int a, int b)
       return b;
   }
 
+////////////////////////////////////////////////////////////////////////////////
 // INTERVAL CLASS //////////////////////////////////////////////////////////////
-  /**
-   * @brief default constructor for interval class
-   * @details sets the low and high values to a negative flag value of -1
-   */
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+* @brief default constructor for interval class
+* @details sets the low and high values to a negative flag value of -1
+*/
 interval::interval()
   {
    // set default values
@@ -42,7 +55,7 @@ void interval::printInterval()
 
 /**
  * @brief A simple print function to assist with printing the overlap message
- *        and corrosponding interval
+ *        and corresponding interval
  */   
 void interval::printOverlap()
   {
@@ -58,7 +71,7 @@ void interval::printOverlap()
  *          come in handy.
  * 
  * @param copy The interval to copy
- * @return *this interval to finalize assingment
+ * @return *this interval to finalize assignment
  */
 interval& interval::operator =(const interval& copy)
   {
@@ -68,7 +81,10 @@ interval& interval::operator =(const interval& copy)
    return *this;
   }
 
+////////////////////////////////////////////////////////////////////////////////
 // INTERVAL NODE CLASS /////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * @brief Default constructor for interval node class sets the max value of the
  *        node to -1
@@ -186,7 +202,7 @@ void intervalTree<T>::destroyTree(iNode<T> *sub)
  *          checks the various cases, and prepares the node for insertion fix.
  * 
  * @pre The interval should not already exist in the tree, and should probably
- *      not be negative although i havent tested it.
+ *      not be negative although i haven't tested it.
  * 
  * @post The new interval will be placed into the tree with no children, and
  *       be the color RED to prepare it for insertion fix.
@@ -251,7 +267,7 @@ void intervalTree<T>::insert( const interval input )
 /**
  * @brief Obtains the left most node for a given subtree
  * @details Gets the farthest node to the left and returns it, the subtree
- *          is ussually the root node, but it doesnt matter either way.
+ *          is usually the root node, but it doesn't matter either way.
  * 
  * @param sub The subtree in which to obtain the left most node
  * @return The interval node that is the farthest left for the given subtree.
@@ -333,50 +349,86 @@ iNode<T>* intervalTree<T>::search(iNode<T>* sub, const interval find)
 template <class T>
 iNode<T>* intervalTree<T>::searchHelper(const interval find)
   {
+   // search for the interval starting at root
    iNode<T>* found = search(root, find);
 
+   // return search result
    return found;
   }
 
 template <class T>
 void intervalTree<T>::deleteInterval(iNode<T>* target)
   {
-   iNode<T>* xNode;
-   iNode<T>* yNode = target;
+   // variables
+   iNode<T>* x;
+   iNode<T>* y = target;
+   int yColor = y->color;
 
-   int yColor = yNode->color;
-   if (target->left == this->NIL){
-      xNode = target->right;
+   // if left child is NIL
+   if (target->left == NIL)
+     {
+      // set x to the targets right child
+      x = target->right;
+
+      // swap the target with targets right child
       swap(target, target->right);
-   }
-   else if (target->right == this->NIL){
-      xNode = target->left;
+     }
+
+   // right child is NIL
+   else if (target->right == NIL)
+     {
+      // set x to targets left child
+      x = target->left;
+
+      // swap target with left child
       swap(target, target->left);
-   }
+     }
+
    else
      {
-      yNode = getLeftMostNode(target->right);
+      // get the left most node from subtree
+      y = getLeftMostNode(target->right);
 
-      yColor = yNode->color;
-      xNode = yNode->right;
+      // update color
+      yColor = y->color;
 
-      if (yNode->parent == target)
+      // set x to y's right child
+      x = y->right;
+
+      // if y's parent is our target
+      if (y->parent == target)
         {
-         xNode->parent = yNode;
+         // set x's parent to y
+         x->parent = y;
         }
 
       else
         {
-         swap(yNode, yNode->right);
-         yNode->right = target->right;
-         yNode->right->parent = yNode;
+         // swap y with its right child
+         swap(y, y->right);
+
+         // set y's right value to the targets right
+         y->right = target->right;
+
+         // update parent
+         y->right->parent = y;
         }
 
-      swap(target, yNode);
-      yNode->left = target->left;
-      yNode->left->parent = yNode;
-      yNode->color = target->color;
-      yNode->max = findMax(yNode->i.high, findMax(yNode->left->max, yNode->right->max));
+      // swap target with y
+      swap(target, y);
+
+      // set y left to targets left
+      y->left = target->left;
+
+      // update parent
+      y->left->parent = y;
+
+      // update color
+      y->color = target->color;
+
+      // update max
+      y->max = findMax(y->i.high, 
+                                  findMax(y->left->max, y->right->max));
      }
 
    // fix the max data member for affected tree
@@ -386,7 +438,7 @@ void intervalTree<T>::deleteInterval(iNode<T>* target)
    if (yColor == BLACK)
      {
       // preform fix operation on tree
-      fixDelete(xNode);
+      fixDelete(x);
      }
 
    // delete the target node
@@ -400,74 +452,129 @@ void intervalTree<T>::fixDelete(iNode<T>* x)
      {
       if(x == x->parent->left) 
         {
-         iNode<T>* w = x->parent->right;
-         if(w->color == RED) 
-           { //case 1
-            w->color = BLACK;
+         iNode<T>* temp = x->parent->right;
+
+         // Case 1
+         if(temp->color == RED) 
+           {
+            // set color to black
+            temp->color = BLACK;
+
+            // sets x's parent's color to red
             x->parent->color = RED;
+
+            // rotate left
             rotateLeft(x->parent);
-            w = x->parent->right;
+
+            // set temp node ptr to x's parents right
+            temp = x->parent->right;
            }
          
-         if(w->left->color == BLACK && w->right->color == BLACK) 
-           { // case 2
-            w->color = RED;
+         // Case 2
+         if(temp->left->color == BLACK && temp->right->color == BLACK) 
+           {
+            // set the color to red
+            temp->color = RED;
+
+            // set x to its parent
             x = x->parent;
            }
 
          else 
            {
-            if(w->right->color == BLACK)
-              { // case 3
-               w->left->color = BLACK;
-               w->color = RED;
-               rotateRight(w);
-               w = x->parent->right;
+            // Case 3
+            if(temp->right->color == BLACK)
+              {
+               // set temp left child to black
+               temp->left->color = BLACK;
+
+               // set temp node to red
+               temp->color = RED;
+
+               // rotate right
+               rotateRight(temp);
+
+               // set temp to x's parents right child
+               temp = x->parent->right;
               }
 
-            w->color = x->parent->color; // case 4
+            // change colors
+            temp->color = x->parent->color;
             x->parent->color = BLACK;
-            w->right->color = BLACK;
+            temp->right->color = BLACK;
+
+            // rotate left about x's parent
             rotateLeft(x->parent);
+
+            // set x to root
             x = root;
            }
         }
 
-       else 
-         {
-         iNode<T>* w = x->parent->left;
-         if(w->color == RED) 
-           { //case 1
-            w->color = BLACK;
+      // otherwise its to the right
+      else
+        {
+         iNode<T>* temp = x->parent->left;
+
+         // Case 4
+         if(temp->color == RED) 
+           {
+            // set temp node to black
+            temp->color = BLACK;
+
+            // set x parent to red
             x->parent->color = RED;
+
+            // rotate right about x's parent
             rotateRight(x->parent);
-            w = x->parent->left;
+
+            // make temp ptr to x's parents left child
+            temp = x->parent->left;
            }
          
-         if(w->left->color == BLACK && w->right->color == BLACK)
-           { // case 2
-            w->color = RED;
+         // Case 5
+         if(temp->left->color == BLACK && temp->right->color == BLACK)
+           {
+            // set color red
+            temp->color = RED;
+
+            // set x to its parent
             x = x->parent;
            }
 
          else 
            {
-            if(w->left->color == BLACK)
-              { // case 3
-               w->right->color = BLACK;
-               w->color = RED;
-               rotateLeft(w);
-               w = x->parent->left;
+            // Case 6
+            if(temp->left->color == BLACK)
+              {
+               // set right color to black
+               temp->right->color = BLACK;
+
+               // set temp color to red
+               temp->color = RED;
+
+               // rotate left about temp node
+               rotateLeft(temp);
+
+               // set temp node to x's parents left child
+               temp = x->parent->left;
               }
 
-            w->color = x->parent->color; // case 4
+            // set color
+            temp->color = x->parent->color;
             x->parent->color = BLACK;
-            w->left->color = BLACK;
+            temp->left->color = BLACK;
+
+            // rotate right about x's parent
             rotateRight(x->parent);
+
+            // set x to root
             x = root;
            }
         }
      }
+
+   // finally change the color of x to black
    x->color = BLACK;
   }
 
@@ -475,7 +582,7 @@ void intervalTree<T>::fixDelete(iNode<T>* x)
  * @brief Simple function thats swaps the two nodes a and b
  * 
  * @param a First interval node to swap
- * @param b Second interval node to swa[]
+ * @param b Second interval node to swap
  * @return none
  */
 template <class T>
@@ -562,14 +669,14 @@ void intervalTree<T>::rotateRight(iNode<T> *x)
    iNode<T> *y = x->left;
    x->left = y->right;
 
-   if (y->right != this->NIL)
+   if (y->right != NIL)
      {
       y->right->parent = x;
      }
 
    y->parent = x->parent;
 
-   if (x->parent == this->NIL)
+   if (x->parent == NIL)
      {
       this->root = y;
      }
@@ -697,15 +804,7 @@ void intervalTree<T>::fixMaxValues(iNode<T> *x)
 template <class T>
 bool intervalTree<T>::overlaps(interval a, interval b)
   {
-   if ((b.high >= a.low) && (a.high >= b.low))
-     {
-      return true;
-     }
-
-   else
-     {
-      return false;
-     }
+     return (b.high >= a.low) && (a.high >= b.low);
   }
 
 /**
